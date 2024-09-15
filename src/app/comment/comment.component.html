@@ -1,0 +1,12 @@
+<div class="container">
+  <span class="userwrap">
+    <p class="username">{{comment.email}}</p>
+    <span
+      class="status"
+      [class.online]="status"
+    ></span>
+  </span>
+  <p class="comment">
+    {{comment.body}} 
+  </p>
+</div>

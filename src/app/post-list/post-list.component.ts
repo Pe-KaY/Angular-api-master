@@ -4,6 +4,7 @@ import { PostsComponent } from '../posts/posts.component';
 import { APIService } from '../services/api.service';
 import { post } from '../the-interfaces';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-list',
@@ -13,15 +14,23 @@ import { Observable } from 'rxjs';
   styleUrl: './post-list.component.scss',
 })
 export class PostListComponent {
-  constructor(private api: APIService) {}
+  constructor(private api: APIService, private route: Router) {}
 
   posts$!: Observable<post[]>;
 
   ngOnInit(): void {
+    if(this.api.postsArray.length > 0){
+      this.posts$ = this.api.posts$;
+      return
+    }
+
     this.posts$ = this.api.posts$;
     this.api.getPosts();
     this.api.getUsers();
+    console.log('initialized');
   }
 
-
+  addPost() {
+    this.route.navigate(['post-create']);
+  }
 }

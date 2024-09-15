@@ -15,8 +15,16 @@
 
   <!-- pOst wrapper -->
   <div class="postwrapp">
-    <h1>Posts</h1>
-    <div class="postswrapp" *ngIf="posts$ |async as posts">
+    <!-- add post -->
+    <div class="addpost">
+      <h1>Posts</h1>
+      <span>
+        <button (click)="addPost()">Add Post</button>
+      </span>
+    </div>
+
+    <!-- post list -->
+    <div class="postswrapp" *ngIf="posts$ | async as posts">
       <ng-container *ngFor="let post of posts">
         <app-posts [post]="post"></app-posts>
       </ng-container>

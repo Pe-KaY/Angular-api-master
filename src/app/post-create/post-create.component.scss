@@ -1,0 +1,74 @@
+// import mixins
+@use "../../mixins.scss";
+
+.container {
+  border: 1px solid green;
+//   min-height: 40rem;
+  width: 60%;
+  margin: auto;
+  border-radius: 1rem;
+  display: flex;
+  overflow: hidden;
+  padding: 1rem;
+
+  form {
+    border: 1px solid blue;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    input,
+    textarea {
+      display: block;
+      border-radius: 0.6rem;
+    }
+    input {
+      height: 5rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .title {
+      border: 1px solid orange;
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
+    .post {
+      border: 1px solid orange;
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      textarea {
+        height: 6rem;
+        font-size: 1.2rem;
+      }
+    }
+
+    .buttonswrap {
+      border: 1px solid purple;
+      min-height: 7rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .addpost {
+        @include mixins.button(green);
+        
+      }
+
+      .cancel {
+        @include mixins.button(red);
+      }
+    }
+  }
+}
