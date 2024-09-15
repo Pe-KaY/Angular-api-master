@@ -2,8 +2,7 @@
 @use "../../mixins.scss";
 
 .container {
-  border: 1px solid green;
-//   min-height: 40rem;
+  background-color: #007ea7;
   width: 60%;
   margin: auto;
   border-radius: 1rem;
@@ -12,7 +11,6 @@
   padding: 1rem;
 
   form {
-    border: 1px solid blue;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -22,6 +20,7 @@
     textarea {
       display: block;
       border-radius: 0.6rem;
+      padding: 1rem;
     }
     input {
       height: 5rem;
@@ -30,7 +29,6 @@
     }
 
     .title {
-      border: 1px solid orange;
       display: flex;
       flex-direction: column;
 
@@ -40,7 +38,6 @@
       }
     }
     .post {
-      border: 1px solid orange;
       display: flex;
       flex-direction: column;
 
@@ -55,19 +52,21 @@
     }
 
     .buttonswrap {
-      border: 1px solid purple;
       min-height: 7rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
 
       .addpost {
-        @include mixins.button(green);
-        
+        @include mixins.button(#4f772d);
+        font-weight: bold;
+        color: white
       }
 
       .cancel {
-        @include mixins.button(red);
+        @include mixins.button(#ef233c);
+        font-weight: bold;
+        color: white
       }
     }
   }

@@ -27,7 +27,6 @@ export class PostListComponent {
     this.posts$ = this.api.posts$;
     this.api.getPosts();
     this.api.getUsers();
-    console.log('initialized');
   }
 
   addPost() {

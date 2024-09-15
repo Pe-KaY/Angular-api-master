@@ -4,29 +4,26 @@
   @include mixins.container();
   // profile styling starts here
   .profilewrapp {
+    // background-color: #;
     height: 20%;
-    border: 1px solid pink;
     display: flex;
     align-items: center;
     gap: 1rem;
-    // justify-content: space-between;
+
 
     // figure
     figure {
       width: 6rem;
       height: 6rem;
       border-radius: 100vw;
-      // border: 2px solid orange;
       overflow: hidden;
     }
     // profile details
     .prof-details {
-      // border: 1px solid red;
       width: 50%;
       height: 80%;
       display: flex;
       flex-direction: column;
-      //   align-items: center;
       justify-content: center;
 
       h1 {
@@ -34,7 +31,6 @@
       }
 
       .status {
-        // border: 1px solid green;
         display: flex;
         align-items: center;
         gap: 0.3rem;
@@ -53,6 +49,7 @@
   .postwrapp {
     @include mixins.lists();
     height: 100%;
+    
     .addpost {
       display: flex;
       align-items: center;
@@ -68,7 +65,6 @@
 
     // posts container
     .postswrapp {
-      border: 1px solid red;
       display: flex;
       flex-direction: column;
       gap: 1rem;

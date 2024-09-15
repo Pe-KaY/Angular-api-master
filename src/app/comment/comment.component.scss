@@ -1,23 +1,25 @@
 .container {
-  border: 1px solid red;
+  background-color: #003554;
   height: 8rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   justify-content: center;
+  padding: 1rem;
+  border-radius: 1rem;
 
   .userwrap {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    border: 1px solid blue;
+    
 
     .username {
       font-weight: bold;
       font-size: 1.2rem;
     }
     .status {
-        display: block;
+      display: block;
       width: 0.6rem;
       height: 0.6rem;
       border-radius: 100vw;
