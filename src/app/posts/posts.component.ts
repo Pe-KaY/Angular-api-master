@@ -15,14 +15,11 @@ export class PostsComponent {
 
   @Input('post') post!: post;
 
-  // get username
-  getUserName(id: number): string {
-    return this.api.usersArray.find((user) => user.id === id)?.name || '';
-  }
 
   // assings post clicked to service postclicked
   postClicked(post: post) {
     this.api.clickedPost = post;
+    this.api.randomStatus();
     this.route.navigate(['posts-detail']);
   }
 }
