@@ -1,0 +1,25 @@
+<div class="container">
+  <!-- profile wrapper -->
+  <div class="profilewrapp">
+    <figure>
+      <img src="../../assets/smile.jpg" alt="profile" />
+    </figure>
+    <div class="prof-details">
+      <h1>Angela Hu</h1>
+      <div class="status">
+        <span></span>
+        <p>Online</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- pOst wrapper -->
+  <div class="postwrapp">
+    <h1>Posts</h1>
+    <div class="postswrapp" *ngIf="posts$ |async as posts">
+      <ng-container *ngFor="let post of posts">
+        <app-posts [post]="post"></app-posts>
+      </ng-container>
+    </div>
+  </div>
+</div>

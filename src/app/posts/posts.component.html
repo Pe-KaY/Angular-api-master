@@ -1,0 +1,10 @@
+<div (click)="postClicked(post)" class="container">
+  <!-- post details -->
+  <div class="details">
+    <h3>{{ post.title }}</h3>
+    <p class="username">{{ getUserName(post.userId) }}</p>
+    <p class="comment">
+      {{ post.body.length > 100 ? post.body.slice(0, 150) + "..." : post.body }}
+    </p>
+  </div>
+</div>
