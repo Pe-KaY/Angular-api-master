@@ -55,7 +55,7 @@ export class APIService {
         })
       )
       .subscribe((users) => {
-        console.log(users);
+      
         this.usersArray = users;
       });
   }
