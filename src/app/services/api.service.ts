@@ -55,7 +55,6 @@ export class APIService {
         })
       )
       .subscribe((users) => {
-      
         this.usersArray = users;
       });
   }
@@ -155,10 +154,23 @@ export class APIService {
       headers: {
         Authorization: 'Bearer fake-jwt-token',
       },
-    }).then(() => {
-      this.postsArray = this.postsArray.filter((post) => post.id !== id);
-      this.posts$.next(this.postsArray);
-    });
-    this.router.navigate(['']).catch((err) => console.log(`Error: ${err}`));
+    })
+      .then(() => {
+        this.postsArray = this.postsArray.filter((post) => post.id !== id);
+        this.posts$.next(this.postsArray);
+        this.clearClickedPost();
+        this.router.navigate(['']);
+      })
+      .catch((err) => console.log(`Error: ${err}`));
+  }
+
+  // clear clicked post
+  clearClickedPost() {
+    this.clickedPost = {
+      userId: 0,
+      title: '',
+      body: '',
+      id: 0,
+    };
   }
 }

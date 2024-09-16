@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { APIService } from '../services/api.service';
 import { comment } from '../the-interfaces';
 
 @Component({
@@ -10,7 +9,7 @@ import { comment } from '../the-interfaces';
   styleUrl: './comment.component.scss',
 })
 export class CommentComponent {
-  constructor(public api: APIService) {}
+  
 
   status!: boolean;
 
